@@ -2,8 +2,8 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @route.name %>
+  <%= @route.name %><br>
 </p>
 
-<%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back', routes_path %>
+<button><%= link_to 'Edit', edit_route_path(@route) %></button> |
+<button><%= link_to 'Back', routes_path %></button>

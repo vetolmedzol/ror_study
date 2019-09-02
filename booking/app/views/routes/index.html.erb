@@ -14,9 +14,9 @@
   <% @routes.each do |route| %>
     <tr>
       <td><%= route.name %></td>
-      <td><%= link_to 'Show', route %></td>
-      <td><%= link_to 'Edit', edit_route_path(route) %></td>
-      <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><button><%= link_to 'Show', route %></button></td>
+      <td><button><%= link_to 'Edit', edit_route_path(route) %></button></td>
+      <td><button><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
     </tr>
   <% end %>
   </tbody>
@@ -24,4 +24,5 @@
 
 <br>
 
-<%= link_to 'New Route', new_route_path %>
+<button> <%= link_to 'New Route', new_route_path %> </button>
+<button> <%= link_to 'Back', 'welcome#index' %> </button>
