@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @train.number %>
+</p>
+
+<button> <%= link_to 'Edit', edit_train_path(@train) %></button> |
+<button> <%= link_to 'Back', trains_path %></button>

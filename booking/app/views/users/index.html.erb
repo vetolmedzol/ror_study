@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your cabinet!</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><button><%= link_to 'Show', user %></button></td>
+      <td><button><%= link_to 'Edit profile', edit_user_path(user) %></button></td>
+      <td><button><%= link_to 'Destroy profile ', user, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button> <%= link_to 'Create new profile', new_user_path %> </button>
+<button> <%= link_to 'Back','welcome#index' %></button>

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trains</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Number</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @trains.each do |train| %>
+    <tr>
+      <td><%= train.number %></td>
+      <td> <button><%= link_to 'Show', train %> </button> </td>
+      <td> <button> <%= link_to 'Edit', edit_train_path(train) %></button></td>
+      <td> <button> <%= link_to 'Destroy', train, method: :delete, data: { confirm: 'Are you sure?' } %> </button></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button> <%= link_to 'New Train', new_train_path %> </button>
+<button> <%= link_to 'Back','welcome#index' %> </button>
