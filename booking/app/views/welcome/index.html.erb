@@ -1,0 +1,22 @@
+<style>
+  .head {
+    text-align: center;
+  }
+
+  .buttons {
+    text-align: center;
+  }
+</style>
+<div class="head">
+  <h1>Hello, RAILS!</h1>
+</div>
+
+<button> <%= link_to 'Sign In', users_path %> </button>
+
+<div class="buttons">
+  <button>  <%= link_to 'Railway Stations', railway_stations_path %>  </button>
+  <button> <%= link_to 'Trains', trains_path %></button>
+  <button> <%= link_to 'Routes', routes_path %> </button>
+  <button> <%= link_to 'Tickets', tickets_path %> </button>
+  <button> <%= link_to 'Carriages', carriages_path %> </button>
+</div>

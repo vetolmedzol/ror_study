@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Number:</strong>
+  <%= @train.number %>
+</p>
+<p>
+  <strong>Railway Station:</strong>
+  <% if @train.current_station %>
+    <%= @train.current_station.title %>
+  <% else %>
+    No station
+  <% end %>
+</p>
+
+
+<strong>Coupe
+  cars: <%= @train.count_cars(@train.carriages, 'coupe') %></strong>
+<p>Lower
+  seats: <%= @train.count_seats(@train.carriages, 'lower_seats', 'compartment') %></p>
+<p>Top
+  seats: <%= @train.count_seats(@train.carriages, 'top_seats', 'compartment') %></p>
+
+
+<strong>Reserve
+  cars: <%= @train.count_cars(@train.carriages, 'reserve') %></strong>
+<p>Bottom
+  seats: <%= @train.count_seats(@train.carriages, 'lower_seats', 'reserve') %></p>
+<p>Top
+  seats: <%= @train.count_seats(@train.carriages, 'top_seats', 'reserve') %></p>
+
+<p>
+  <strong>Route:</strong>
+  <% if @train.route %>
+    <%= @train.route.name %>
+  <% else %>
+    No route
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_train_path(@train) %> |
+<%= link_to 'Back', trains_path %> |
+<%= link_to 'Menu', root_path %>
