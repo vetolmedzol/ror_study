@@ -1,0 +1,26 @@
+<%= form_with(model: @carriage, local: true) do |form| %>
+  <%= render 'common/errors', resource: @carriage %>
+  <div class="field">
+    <%= form.label :train, "Train" %>
+    <%= form.collection_select :train_id,
+                               Train.all, :id, :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_of_car, "Type" %>
+    <%= form.select(:type_of_car, %w(compartment reserve)) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lower_seats %>
+    <%= form.text_field :lower_seats %>
+  </div>
+  <div class="field">
+    <%= form.label :top_seats %>
+    <%= form.text_field :top_seats %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

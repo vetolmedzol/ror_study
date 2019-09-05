@@ -11,11 +11,11 @@
   </thead>
 
   <tbody>
-<%= render @railway_stations %>
+  <%= render @railway_stations %>
   </tbody>
 </table>
 
 <br>
 
-<button> <%= link_to 'New Railway Station', new_railway_station_path %> </button>
-<button> <%= link_to 'Back','welcome#index' %> </button>
+<%= link_to 'New Railway Station', new_railway_station_path %> |
+<%= link_to 'Back', 'welcome#index' %>

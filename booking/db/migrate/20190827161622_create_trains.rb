@@ -6,7 +6,6 @@ class CreateTrains < ActiveRecord::Migration[5.2]
       t.string :number
 
       t.timestamps
-
     end
   end
 end

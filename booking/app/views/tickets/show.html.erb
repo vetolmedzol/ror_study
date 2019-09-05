@@ -19,5 +19,6 @@
   <%= RailwayStation.find(@ticket.last_railway_station_id).title %>
 </p>
 
-<button><%= link_to 'Edit', edit_ticket_path(@ticket) %></button> |
-<button><%= link_to 'Back', tickets_path %></button>
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %> |
+<%= link_to 'Main', root_path %>

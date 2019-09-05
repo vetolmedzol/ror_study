@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :tickets
   resources :users
   resources :welcome
+  resources :carriages
   # get 'welcome/index'
 
   root 'welcome#index'
