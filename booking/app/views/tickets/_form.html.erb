@@ -1,0 +1,37 @@
+<%= form_with(model: @ticket, local: true) do |form| %>
+  <% render 'common/errors', resource: @ticket %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.text_field :number %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :user %>
+    <%= form.collection_select :user_id,
+                               User.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_train, 'Train' %>
+    <%= form.collection_select :current_train_id,
+                               Train.all, :id, :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_railway_station %>
+    <%= form.collection_select :first_railway_station_id,
+                               RailwayStation.all, :id, :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_railway_station %>
+    <%= form.collection_select :last_railway_station_id,
+                               RailwayStation.all, :id, :title %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
