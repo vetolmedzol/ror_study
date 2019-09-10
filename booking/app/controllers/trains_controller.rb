@@ -18,35 +18,24 @@ class TrainsController < ApplicationController
   def create
     @train = Train.new(train_params)
 
-    respond_to do |format|
-      if @train.save
-        format.html { redirect_to @train, notice: 'Train was successfully created.' }
-        format.json { render :show, status: :created, location: @train }
-      else
-        format.html { render :new }
-        format.json { render json: @train.errors, status: :unprocessable_entity }
-      end
+    if @train.save
+      redirect_to @train, notice: 'Train was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @train.update(train_params)
-        format.html { redirect_to @train, notice: 'Train was successfully updated.' }
-        format.json { render :show, status: :ok, location: @train }
-      else
-        format.html { render :edit }
-        format.json { render json: @train.errors, status: :unprocessable_entity }
-      end
+    if @train.update(train_params)
+      redirect_to @train, notice: 'Train was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @train.destroy
-    respond_to do |format|
-      format.html { redirect_to trains_url, notice: 'Train was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to trains_url, notice: 'Train was successfully destroyed.'
   end
 
   private
@@ -57,6 +46,6 @@ class TrainsController < ApplicationController
 
   def train_params
     params.require(:train).permit(:number, :current_railway_station_id,
-                                  :route_id)
+                                  :route_id, :order_carriage)
   end
 end

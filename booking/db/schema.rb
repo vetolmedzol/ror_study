@@ -12,11 +12,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_190_905_083_449) do
+ActiveRecord::Schema.define(version: 20_190_910_094_336) do
   create_table 'carriages', force: :cascade do |t|
-    t.string 'type_of_car'
+    t.integer 'number'
     t.integer 'top_seats'
     t.integer 'lower_seats'
+    t.integer 'side_top_seats'
+    t.integer 'side_lower_seats'
+    t.string 'type'
     t.integer 'train_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
@@ -32,6 +35,7 @@ ActiveRecord::Schema.define(version: 20_190_905_083_449) do
   create_table 'railway_stations_routes', force: :cascade do |t|
     t.integer 'railway_station_id'
     t.integer 'route_id'
+    t.integer 'station_index'
   end
 
   create_table 'routes', force: :cascade do |t|
@@ -60,9 +64,9 @@ ActiveRecord::Schema.define(version: 20_190_905_083_449) do
     t.integer 'railway_stations_id'
     t.integer 'current_railway_station_id'
     t.integer 'route_id'
+    t.boolean 'order_carriage', default: false
     t.index ['current_railway_station_id'], name: 'index_trains_on_current_railway_station_id'
     t.index ['railway_stations_id'], name: 'index_trains_on_railway_stations_id'
-    t.index [nil], name: 'index_trains_on_current_route_id'
   end
 
   create_table 'trains_routes', force: :cascade do |t|

@@ -11,11 +11,11 @@
   </thead>
 
   <tbody>
-  <%= render @carriages %>
+  <%= render partial: 'carriages/carriage', collection: @carriages %>
   </tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Carriage', new_carriage_path %> |
-<%= link_to 'Back', 'welcome#index' %>
+<%= link_to 'Back', root_path%>

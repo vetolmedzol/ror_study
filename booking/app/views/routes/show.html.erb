@@ -10,11 +10,22 @@
 <% else %>
   <p>The route have the stations:</p>
   <ul>
-    <% @route.railway_stations.each do |station| %>
-      <li><%= station.title %></li>
+    <% @route.railway_stations.ordered.each do |station| %>
+      <li><%= "Station: #{station.title}. Position in route  #{station.index(@route)} "%>
     <% end %>
   </ul>
 <% end %>
+
+<%# if @route.railway_stations_routes.empty? %>
+<!--  <p>The route is not have any stations</p>-->
+<%# else %>
+<!--  <p>The route have the stations:</p>-->
+<!--  <ul>-->
+    <%# @route.railway_stations_routes.order(:station_index).each do |station| %>
+<!--      <li><%# station.title station.station_index %>-->
+    <%# end %>
+<!--  </ul>-->
+<%# end %>
 
 <% if @route.trains.empty? %>
   <p>The route is not have any trains </p>
@@ -26,6 +37,7 @@
     <% end %>
   </ul>
 <% end %>
+
 
 <%= link_to 'Edit', edit_route_path(@route) %> |
 <%= link_to 'Back', routes_path %> |

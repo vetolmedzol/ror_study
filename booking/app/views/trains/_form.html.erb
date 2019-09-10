@@ -17,6 +17,11 @@
                                Route.all, :id, :name %>
   </div>
 
+  <div class="field">
+    <%= form.label 'Numeration from the tail of train' %>
+    <%= form.check_box :tail_sort%>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

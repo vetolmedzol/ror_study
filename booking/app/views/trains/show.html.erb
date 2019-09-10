@@ -11,22 +11,35 @@
     No station
   <% end %>
 </p>
-
+<%= render partial: 'carriage', collection: @train.order_carriage %>
 
 <strong>Coupe
-  cars: <%= @train.count_cars(@train.carriages, 'coupe') %></strong>
+  cars: <%= @train.count_cars(@train.carriages, 'CoupeCarriage') %></strong>
 <p>Lower
-  seats: <%= @train.count_seats(@train.carriages, 'lower_seats', 'compartment') %></p>
+  seats: <%= @train.count_seats('CoupeCarriage', 'lower_seats') %></p>
 <p>Top
-  seats: <%= @train.count_seats(@train.carriages, 'top_seats', 'compartment') %></p>
-
+  seats: <%= @train.count_seats('CoupeCarriage', 'top_seats') %></p>
 
 <strong>Reserve
-  cars: <%= @train.count_cars(@train.carriages, 'reserve') %></strong>
-<p>Bottom
-  seats: <%= @train.count_seats(@train.carriages, 'lower_seats', 'reserve') %></p>
+  cars: <%= @train.count_cars(@train.carriages, 'ReserveCarriage') %></strong>
+<p>Lower
+  seats: <%= @train.count_seats('ReservedCarriage', 'lower_seats') %></p>
 <p>Top
-  seats: <%= @train.count_seats(@train.carriages, 'top_seats', 'reserve') %></p>
+  seats: <%= @train.count_seats('ReservedCarriage', 'top_seats') %></p>
+<p>Side Lower
+  seats: <%= @train.count_seats('ReservedCarriage', 'side_lower_seats') %></p>
+<p>Side Top
+  seats: <%= @train.count_seats('ReservedCarriage', 'side_top_seats') %></p>
+
+<strong>Seating
+  cars: <%= @train.count_cars(@train.carriages, 'SeatingCarriage') %></strong>
+<p>Lower
+  seats: <%= @train.count_seats('SeatingCarriage', 'lower_seats') %></p>
+
+<strong>SV
+  cars: <%= @train.count_cars(@train.carriages, 'SVCarriage') %></strong>
+<p>Lower
+  seats: <%= @train.count_seats('SVCarriage', 'lower_seats') %></p>
 
 <p>
   <strong>Route:</strong>
@@ -37,6 +50,7 @@
   <% end %>
 </p>
 
+<%= link_to 'Add carriage', new_carriage_path(@carriage) %> |
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %> |
 <%= link_to 'Menu', root_path %>
