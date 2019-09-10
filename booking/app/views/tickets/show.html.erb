@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticket Number:</strong>
+  <%= @ticket.number %>
+</p>
+<p>
+  <strong>Train:</strong>
+  <%= Train.find(@ticket.current_train_id).number %>
+</p>
+
+<p>
+  <strong>First Railway Station:</strong>
+  <%= RailwayStation.find(@ticket.first_railway_station_id).title %>
+</p>
+
+<p>
+  <strong>Last Railway Station:</strong>
+  <%= RailwayStation.find(@ticket.last_railway_station_id).title %>
+</p>
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %> |
+<%= link_to 'Main', root_path %>
