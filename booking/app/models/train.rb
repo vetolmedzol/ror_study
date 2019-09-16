@@ -15,8 +15,8 @@ class Train < ApplicationRecord
     carriages.where(type: carriage_type).sum(seats_type)
   end
 
-  def self.order_carriage
-    true
+  def order_carriages
+    sort ? carriages.order(number: :asc) : carriages.order(number: :desc)
   end
 
   def count_cars(carriages, type)

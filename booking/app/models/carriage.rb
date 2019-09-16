@@ -8,6 +8,14 @@ class Carriage < ApplicationRecord
 
   before_validation :add_number
 
+  scope :reserved, -> { where(type: 'ReservedCarriage') }
+  scope :seating, -> { where(type: 'SeatingCarriage') }
+  scope :coupe, -> { where(type: 'CoupeCarriage') }
+  scope :sv, -> { where(type: 'SVCarriage') }
+  scope :ordered, -> { order(:number) }
+
+  private
+
   def add_number
     self.number ||= max_number + 1
   end

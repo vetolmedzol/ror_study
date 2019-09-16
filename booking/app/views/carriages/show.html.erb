@@ -46,6 +46,6 @@
 <% end %>
 
 
-<%= link_to 'Edit', edit_carriage_path(@carriage) %> |
-<%= link_to 'Back', carriages_path %> |
+<%= link_to 'Edit', edit_train_carriage_path(@carriage.becomes(Carriage)) %> |
+<%= link_to 'Back', train_carriages_path %> |
 <%= link_to 'Menu', root_path %>

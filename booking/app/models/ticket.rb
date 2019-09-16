@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Ticket < ApplicationRecord
-  validates :number, presence: true
+  validates :number, :user_name, :passport_data, presence: true
 
   belongs_to :train, class_name: 'Train', foreign_key: :current_train_id
   belongs_to :railway_station, class_name: 'RailwayStation',

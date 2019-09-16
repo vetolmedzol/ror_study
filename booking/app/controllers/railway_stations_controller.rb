@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class RailwayStationsController < ApplicationController
-  before_action :set_railway_station, only: %i[show edit update destroy]
+  before_action :set_railway_station, only: %i[show edit update destroy
+                                               update_position update_time ]
 
   def index
     @railway_stations = RailwayStation.all
@@ -46,12 +47,36 @@ class RailwayStationsController < ApplicationController
 
   def update_position
     route = Route.find(params[:route_id])
-    if @railway_station.update_position(route, params[:station_index])
-      redirect_to route_url(route), notice: 'Station index was successfully updated.'
+    if @railway_station.update_position(route, params[:position])
+      redirect_to route_url(route), notice: 'Position was successfully updated.'
     else
       redirect_to route_url(route)
     end
   end
+
+  def update_time
+    @route = Route.find(params[:route_id])
+    @railway_station.update_time(@route, params[:arrival], params[:departure])
+    redirect_to @route
+  end
+
+  # def update_departure
+  #   route = Route.find(params[:route_id])
+  #   if @railway_station.update_departure(route, params[:departure])
+  #     redirect_to route_url(route), notice: 'Departure time was successfully updated.'
+  #   else
+  #     redirect_to route_url(route)
+  #   end
+  # end
+  #
+  # def update_arrival
+  #   route = Route.find(params[:route_id])
+  #   if @railway_station.update_arrival(route, params[:arrival])
+  #     redirect_to route_url(route), notice: 'Arrival time was successfully updated.'
+  #   else
+  #     redirect_to route_url(route)
+  #   end
+  # end
 
   private
 

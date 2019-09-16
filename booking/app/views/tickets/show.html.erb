@@ -19,6 +19,12 @@
   <%= RailwayStation.find(@ticket.last_railway_station_id).title %>
 </p>
 
+<p>
+<strong>Passenger info:</strong>
+<p>Name: <%= @ticket.user_name %> </p>
+<p> Passport data: <%= @ticket.passport_data%> </p>
+</p>
+
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', tickets_path %> |
 <%= link_to 'Main', root_path %>

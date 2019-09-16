@@ -49,6 +49,6 @@ class TicketsController < ApplicationController
                                    :current_train_id,
                                    :first_railway_station_id,
                                    :last_railway_station_id,
-                                   :user_id)
+                                   :user_id, :user_name, :passport_data)
   end
 end

@@ -1,11 +1,17 @@
+<h1> New Carriage </h1>
 
-<%= form_for( @carriage.becomes(Carriage)) do |form| %>
+<%= form_for [@train, @carriage.becomes(Carriage)] do |form| %>
   <%= render 'common/errors', resource: @carriage %>
 
   <div class="field">
     <%= form.label :train, "Train" %>
     <%= form.collection_select :train_id,
                                Train.all, :id, :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number, "Carriage number" %>
+    <%= form.text_field :number %>
   </div>
 
   <div class="field">

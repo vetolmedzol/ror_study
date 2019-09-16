@@ -2,4 +2,5 @@
 
 class SVCarriage < Carriage
   validates :lower_seats, presence: true
+  # validates :side_lower_seats.nil?, presence: true
 end

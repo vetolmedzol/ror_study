@@ -1,15 +1,20 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :railway_stations
-  resources :trains
+  resources :railway_stations do
+    patch :update_position, on: :member
+    patch :update_time, on: :member
+  end
+  resources :trains do
+    resources :carriages
+  end
   resources :routes
   resources :tickets
   resources :users
   resources :welcome
-  resources :carriages
+  resource  :search, only: %i[show create]
+
   # get 'welcome/index'
 
   root 'welcome#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

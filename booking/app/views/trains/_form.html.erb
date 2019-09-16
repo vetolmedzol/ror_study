@@ -5,6 +5,7 @@
     <%= form.label :number %>
     <%= form.text_field :number %>
   </div>
+
   <div class="field">
     <%= form.label :current_railway_station_id, 'Station' %>
     <%= form.collection_select :current_railway_station_id,
@@ -18,8 +19,8 @@
   </div>
 
   <div class="field">
-    <%= form.label 'Numeration from the tail of train' %>
-    <%= form.check_box :tail_sort%>
+    <%= form.label :order_carriages, 'Numeration from the tail of train' %>
+    <%= form.check_box :sort %>
   </div>
 
   <div class="actions">
