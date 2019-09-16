@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @carriage.id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @carriage.type %>
+</p>
+
+<strong>Train:</strong>
+<% if @carriage.train %>
+  <%= @carriage.train.number %>
+<% else %>
+  No train
+<% end %>
+
+<% if @carriage.top_seats %>
+  <p>
+    <strong>Top Seats</strong>
+    <%= @carriage.top_seats %>
+  </p>
+<% end %>
+
+<% if @carriage.lower_seats %>
+  <p>
+    <strong>Lower Seats</strong>
+    <%= @carriage.lower_seats %>
+  </p>
+<% end %>
+
+<% if @carriage.side_top_seats %>
+  <p>
+    <strong>Side Top Seats</strong>
+    <%= @carriage.side_top_seats %>
+  </p>
+<% end %>
+
+<% if @carriage.side_lower_seats %>
+  <p>
+    <strong>Side Lower Seats</strong>
+    <%= @carriage.side_lower_seats %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_train_carriage_path(@carriage.becomes(Carriage)) %> |
+<%= link_to 'Back', train_carriages_path %> |
+<%= link_to 'Menu', root_path %>
