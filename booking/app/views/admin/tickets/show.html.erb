@@ -1,0 +1,22 @@
+<h1>Tickets</h1>
+
+<p><strong>Number:</strong> <%= @ticket.id %></p>
+<p><strong>User:</strong> <%= @ticket.user.name %></p>
+<p><strong>Full Name:</strong> <%= @ticket.user_name %></p>
+<p><strong>Train:</strong> <%= "#{@ticket.train.present? ? @ticket.train.number : 'blank'}" %></p>
+
+<p>
+  <strong>Departure Station:</strong>
+  <%= "#{@ticket.first_railway_station.present? ? @ticket.first_railway_station.title : 'blank'}" %>
+</p>
+
+<p>
+  <strong>Arrival Station:</strong>
+  <%= "#{@ticket.last_railway_station.present? ? @ticket.last_railway_station.title : 'blank'}" %>
+</p>
+
+<p>
+  <%= link_to 'Edit', edit_admin_ticket_path(@ticket) %> |
+  <%= link_to 'Back', admin_tickets_path %>
+  <%= link_to 'Menu', admin_welcome_index_path %>
+</p>

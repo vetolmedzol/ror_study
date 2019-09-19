@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Booking</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Booking</title>
+  <style type="text/css">
+    #footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 25px;
+      font-size: 20px;
+    }
+  </style>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<p id="notice" class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<% if user_signed_in? %>
+  <%= link_to "Exit", destroy_user_session_path, method: :delete %>
+  <p>Account: <%= current_user.name %></p>
+<% else %>
+  <%= link_to "Enter", new_user_session_path %>
+<% end %>
+
+<body>
+<%= yield %>
+</body>
+
+<div id="footer">
+  "&copy; 2019 Mozol Vitalii. Educational project in an online school
+  <a href=" http://www.thinknetica.com "> Thinknetica </a>"
+</div>
+
 </html>

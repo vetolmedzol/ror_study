@@ -1,0 +1,6 @@
+  <tr>
+    <td><%= ticket.number %></td>
+    <td><button><%= link_to 'Show', ticket %></button></td>
+    <td><button><%= link_to 'Edit', edit_ticket_path(ticket) %></button></td>
+    <td><button><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+  </tr>
