@@ -1,0 +1,11 @@
+<tr>
+  <td><%= ticket.id %></td>
+  <td><%= ticket.train.number %></td>
+  <td><%= ticket.first_railway_station.title %></td>
+  <td><%= ticket.last_railway_station.title %></td>
+  <td><%= ticket.user.name if ticket.user.present? %></td>
+  <td><%= ticket.user_name %></td>
+  <td><%= link_to 'Show', [:admin, ticket] %></td>
+  <td><%= link_to 'Edit', edit_admin_ticket_path(ticket) %></td>
+  <td><%= link_to 'Delete', [:admin, ticket], method: :delete, data: {confirm: 'Are you sure?'} %></td>
+</tr>

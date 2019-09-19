@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_190_916_104_334) do
+ActiveRecord::Schema.define(version: 20_190_918_090_650) do
   create_table 'carriages', force: :cascade do |t|
     t.integer 'number'
     t.integer 'top_seats'
@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20_190_916_104_334) do
   end
 
   create_table 'tickets', force: :cascade do |t|
-    t.integer 'user_id'
     t.string 'number'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
@@ -57,6 +56,7 @@ ActiveRecord::Schema.define(version: 20_190_916_104_334) do
     t.integer 'last_railway_station_id'
     t.string 'user_name'
     t.string 'passport_data'
+    t.integer 'user_id'
     t.index ['current_train_id'], name: 'index_tickets_on_current_train_id'
     t.index ['first_railway_station_id'], name: 'index_tickets_on_first_railway_station_id'
     t.index ['last_railway_station_id'], name: 'index_tickets_on_last_railway_station_id'
@@ -83,5 +83,17 @@ ActiveRecord::Schema.define(version: 20_190_916_104_334) do
     t.string 'name'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.string 'confirmation_token'
+    t.datetime 'confirmed_at'
+    t.datetime 'confirmation_sent_at'
+    t.string 'unconfirmed_email'
+    t.boolean 'admin', default: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 end

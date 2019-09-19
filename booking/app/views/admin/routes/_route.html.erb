@@ -1,0 +1,6 @@
+  <tr>
+    <td><%= route.name %></td>
+    <td><button><%= link_to 'Show', [:admin, route] %></button></td>
+    <td><button><%= link_to 'Edit', edit_admin_route_path(route) %></button></td>
+    <td><button><%= link_to 'Destroy', [:admin,route], method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+  </tr>

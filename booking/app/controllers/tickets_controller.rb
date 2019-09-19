@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class TicketsController < ApplicationController
+  before_action :authenticate_user!, only: :create
   before_action :set_ticket, only: %i[show edit update destroy]
 
   def index
@@ -15,6 +16,7 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
+    @ticket.user = current_user
 
     if @ticket.save
       redirect_to @ticket
@@ -47,8 +49,8 @@ class TicketsController < ApplicationController
   def ticket_params
     params.require(:ticket).permit(:number,
                                    :current_train_id,
-                                   :first_railway_station_id,
-                                   :last_railway_station_id,
-                                   :user_id, :user_name, :passport_data)
+                                   :first_railway_station_id, :user_id,
+                                   :last_railway_station_id, :user_name,
+                                   :passport_data)
   end
 end
