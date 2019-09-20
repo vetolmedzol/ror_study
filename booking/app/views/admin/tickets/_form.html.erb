@@ -1,23 +1,24 @@
-<%= form_for([:admin, @ticket]) do |form| %>
-  <%= render 'common/errors', resource: @ticket %>
+
+<%= form_with(model: @ticket, local: true) do |form| %>
+  <% render 'common/errors', resource: @ticket %>
 
   <div class="field">
-    <%= form.label :user_name, 'Full name of passenger' %><br>
+    <%= form.label t('.user_name')%><br>
     <%= form.text_field :user_name %>
   </div>
 
   <div class="field">
-    <%= form.label :train, 'Train' %>
+    <%= form.label t('.train')%>
     <%= form.collection_select :train_id, Train.all, :id, :number %>
   </div>
 
   <div class="field">
-    <%= form.label :first_railway_station, 'Departure Station' %>
+    <%= form.label t('.first_station')%>
     <%= form.collection_select :first_railway_station_id, RailwayStation.all, :id, :title %>
   </div>
 
   <div class="field">
-    <%= form.label :last_railway_station, 'Arrival Station' %>
+    <%= form.label t('.last_station')%>
     <%= form.collection_select :last_railway_station_id, RailwayStation.all, :id, :title %>
   </div>
 

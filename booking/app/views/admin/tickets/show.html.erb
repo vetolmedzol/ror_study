@@ -1,22 +1,25 @@
-<h1>Tickets</h1>
-
-<p><strong>Number:</strong> <%= @ticket.id %></p>
-<p><strong>User:</strong> <%= @ticket.user.name %></p>
-<p><strong>Full Name:</strong> <%= @ticket.user_name %></p>
-<p><strong>Train:</strong> <%= "#{@ticket.train.present? ? @ticket.train.number : 'blank'}" %></p>
+<h2>Ticket info:</h2>
 
 <p>
-  <strong>Departure Station:</strong>
-  <%= "#{@ticket.first_railway_station.present? ? @ticket.first_railway_station.title : 'blank'}" %>
+  <strong>t.('number')</strong>
+  <%= @ticket.id %>
+</p>
+<p>
+  <strong>t.('.train')</strong>
+  <%#= Train.find(@ticket.train_id).number %>
+  <%= "#{@ticket.train.present? ? @ticket.train.number : 'blank'}" %>
+</p>
+<p>
+  <strong>Departure station:</strong>
+  <%= RailwayStation.find(@ticket.first_railway_station_id).title %>
+</p>
+<p>
+  <strong>Arrival station:</strong>
+  <%= RailwayStation.find(@ticket.last_railway_station_id).title %>
 </p>
 
-<p>
-  <strong>Arrival Station:</strong>
-  <%= "#{@ticket.last_railway_station.present? ? @ticket.last_railway_station.title : 'blank'}" %>
-</p>
+<p> Name: <%= @ticket.user_name %> </p>
+<p> Passport: <%= @ticket.passport_data%> </p>
 
-<p>
-  <%= link_to 'Edit', edit_admin_ticket_path(@ticket) %> |
-  <%= link_to 'Back', admin_tickets_path %>
-  <%= link_to 'Menu', admin_welcome_index_path %>
-</p>
+<%= link_to 'Edit', edit_admin_ticket_path(@ticket) %> |
+<%= link_to 'Back', admin_tickets_path %>

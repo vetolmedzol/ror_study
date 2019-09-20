@@ -1,32 +1,14 @@
 <style>
-  .head {
-    text-align: center;
-  }
 
   .menu {
     text-align: center;
     font-size: 35px;
   }
-
-  .search {
-    float: right;
-    font-size: 25px;
-
-  }
 </style>
-<div class="head">
-  <h1>Hello, RAILS!</h1>
-</div>
-
-<h1> "Admin" <%= current_user.name %>!</h1>
-
-<div class="search">
-  <%= link_to 'Ticket Search', search_path %>
-</div>
 
 <div class='menu'>
-  <%= link_to 'Railway Stations', admin_railway_stations_path %> |
-  <%= link_to 'Trains', admin_trains_path %> |
-  <%= link_to 'Routes', admin_routes_path %> |
-  <%= link_to 'Tickets', admin_tickets_path %>
+  <%= link_to t('.Stations'), admin_railway_stations_path %> |
+  <%= link_to t('.Trains'), admin_trains_path %> |
+  <%= link_to t('.Routes'), admin_routes_path %> |
+  <%= link_to t('.Tickets'), admin_tickets_path %>
 </div>

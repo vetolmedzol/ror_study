@@ -1,0 +1,103 @@
+ru:
+  layouts:
+    application:
+      copyright: '2019 Мозоль Виталий. Учебный проект в онлайн школе'
+      tickets: 'Мои билеты'
+    admin:
+      copyright: '2019 Мозоль Виталий. Учебный проект в онлайн школе '
+      welcome: "Панель администратора"
+  common:
+    back: 'Назад'
+    show: 'Показать'
+    edit: 'Редактировать'
+    delete: 'Удалить'
+    create: 'Создать'
+    errors: 'При введении данных возникли ошибки'
+    main: 'На главную'
+    sign_out: 'Выйти'
+    sign_in: 'Регистрация'
+    sign_up: 'Зарегистрироваться'
+    login: 'Войти'
+    name: 'Имя'
+    password: 'Пароль'
+    password_conf: 'Подтверждение пароля'
+    remember: 'Запомнить меня'
+  searches:
+      show:
+        find: 'Найти'
+        train: 'Поезд'
+        route: 'Маршрут'
+        arrival: 'Прибытие'
+        departure: 'Отправление'
+        buy: 'Приобрести билет'
+
+  admin:
+    railway_stations:
+      new:
+        title: 'Новая станция'
+      form:
+        submit: '%{action} станцию'
+      edit:
+        title: 'Редактирование станции'
+      show:
+        name: 'Название:'
+      index:
+        title: 'Cтанции'
+        name: 'Название'
+        new: 'Создать'
+        main: 'На главную'
+    routes:
+      new:
+        title: 'Новый маршрут'
+      form:
+        stations: 'Станции'
+        submit: '%{action} маршрут'
+      edit:
+        title: 'Редактирование маршрута'
+      index:
+        title: 'Маршруты'
+        name: 'Название'
+        new: 'Создать'
+        main: 'На главную'
+      show:
+        title: 'Маршрут:'
+        name: 'Название:'
+        no_trains: 'Поездов нет'
+        stations_on_route: 'Станции на маршруте:'
+        no_stations: 'Станций нет'
+        position: 'Позиция'
+        trains_on_route: 'Поезда на маршруте:'
+        arrival: 'Время прибытия'
+        departure: 'Время отправления'
+    tickets:
+      form:
+        submit: '%{action} билет'
+        user_name: 'ФИО Пассажира'
+        train: 'Поезд'
+        first_station: 'Первая станция'
+        last_station: 'Конечная станция'
+      edit:
+        title: 'Редактирование билета'
+      index:
+        title: 'Билеты'
+        main: 'На главную'
+      new:
+        title: 'Создание билета'
+        user_id:
+        train_id:
+        start_station_id:
+        end_station_id:
+      show:
+        title: 'Билет номер'
+        train: 'Поезд:'
+        departure: 'Отправление:'
+        arrival: 'Прибытие:'
+        name: 'Имя:'
+        passport: 'Номер паспорта:'
+    welcome:
+      index:
+        Stations: 'Станции'
+        Trains: 'Поезда'
+        Routes: 'Маршруты'
+        Tickets: 'Билеты'
+        Search: 'Поиск'

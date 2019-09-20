@@ -1,4 +1,4 @@
-<h1>Ticket Search</h1>
+<h1><%= t('admin.welcome.index.Search') %></h1>
 
 <div>
   <%= form_tag search_path, method: :get do %>
@@ -10,7 +10,7 @@
       <%= select_tag :last_railway_station_id,
                      options_from_collection_for_select(@stations, :id, :title)%>
     </div>
-    <div><%= submit_tag "Find" %>
+    <div><%= submit_tag t('.find') %>
     </div>
   <% end %>
 </div>
@@ -25,10 +25,10 @@
   <% if @routes %>
   <table class="table">
     <tr>
-      <th>Train</th>
-      <th>Route</th>
-      <th>Time departure</th>
-      <th>Time arrival</th>
+      <th><%=t('.train') %></th>
+      <th><%=t('.route') %></th>
+      <th><%=t('.departure') %></th>
+      <th><%=t('.arrival') %></th>
       <td></td>
     </tr>
     <% @routes.each do |route| %>
@@ -38,7 +38,7 @@
           <td><%= route.name %></td>
           <td><%= "#{@first_railway_station.title} - #{@first_railway_station.time(train.route, :departure)} "%></td>
           <td><%= "#{@last_railway_station.title} - #{@last_railway_station.time(train.route, :arrival)} "%></td>
-          <td><%= link_to "Buy ticket", new_ticket_path(ticket: { first_railway_station_id: @first_railway_station.id,
+          <td><%= link_to t('.buy'), new_ticket_path(ticket: { first_railway_station_id: @first_railway_station.id,
                                                                   last_railway_station_id: @last_railway_station.id, train_id: train.id }) %></td>
         </tr>
       <% end %>
@@ -47,4 +47,4 @@
 <% end %>
 </p>
 
-<%= link_to 'Back', root_path %>
+<%= link_to t('common.back'),  root_path %>

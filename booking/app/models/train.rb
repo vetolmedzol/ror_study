@@ -16,7 +16,7 @@ class Train < ApplicationRecord
   end
 
   def order_carriages
-    sort ? carriages.order(number: :asc) : carriages.order(number: :desc)
+    order_carriage ? carriages.order(number: :desc) : carriages.order(number: :asc)
   end
 
   def count_cars(carriages, type)

@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Booking - Administrator</title>
+
+  <div id="head">
+    <h1> <%= t('layouts.admin.welcome') %></h1>
+  </div>
+
   <style type="text/css">
     #footer {
       position: fixed;
@@ -10,6 +14,12 @@
       text-align: center;
       padding: 25px;
       font-size: 20px;
+    }
+    #head {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      text-align: center;
     }
   </style>
   <%= csrf_meta_tags %>
@@ -34,7 +44,7 @@
 </body>
 
 <div id="footer">
-  "&copy; 2019 Mozol Vitalii. Educational project in an online school
+  <%= ('layouts.admin.copyright') %>
   <a href=" http://www.thinknetica.com "> Thinknetica </a>"
 </div>
 

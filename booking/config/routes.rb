@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'welcome#index'
+  root 'searches#show'
 
   namespace :admin do
     root 'admin#welcome#index'
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
   resources :tickets
   resources :users
-  resource :search, only: [:show]
+  resource :search, only: %i[new show edit create]
   resources :trains, only: %i[index show]
   resources :welcome
 end
