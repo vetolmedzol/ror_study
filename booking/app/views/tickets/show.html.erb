@@ -1,28 +1,32 @@
-<p>
-  <strong>Ticket Number:</strong>
-  <%= @ticket.number %>
-</p>
-<p>
-  <strong>Train:</strong>
-  <%= Train.find(@ticket.current_train_id).number %>
-</p>
+<div class="ticket_show">
+  <p>
+    <strong><%= t('admin.tickets.form.number') + ':' %> </strong>
+    <%= @ticket.number %>
+  </p>
+  <p>
+    <strong><%= t('admin.tickets.form.train') + ':' %> </strong>
+    <%= Train.find(@ticket.current_train_id).number %>
+  </p>
 
-<p>
-  <strong>First Railway Station:</strong>
-  <%= RailwayStation.find(@ticket.first_railway_station_id).title %>
-</p>
+  <p>
+    <strong><%= t('admin.tickets.form.first_station') + ':' %> </strong>
+    <%= RailwayStation.find(@ticket.first_railway_station_id).title %>
+  </p>
 
-<p>
-  <strong>Last Railway Station:</strong>
-  <%= RailwayStation.find(@ticket.last_railway_station_id).title %>
-</p>
+  <p>
+    <strong><%= t('admin.tickets.form.last_station') + ':' %> </strong>
+    <%= RailwayStation.find(@ticket.last_railway_station_id).title %>
+  </p>
 
-<p>
-<strong>Passenger info:</strong>
-<p>Name: <%= @ticket.user_name %> </p>
-<p> Passport data: <%= @ticket.passport_data%> </p>
-</p>
+  <p>
+    <strong><%= t('admin.tickets.form.passenger_info') + ':' %> </strong>
+  <p> <%= t('admin.tickets.form.user_name') + ':' %> <%= @ticket.user_name %> </p>
+  <p> <%= t('admin.tickets.form.passport_data') + ':' %> <%= @ticket.passport_data %> </p>
+  </p>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %> |
-<%= link_to 'Main', root_path %>
+  <div class="menu">
+    <%= link_to t('common.edit'), edit_ticket_path(@ticket) %> |
+    <%= link_to t('common.back'), tickets_path %> |
+    <%= link_to t('common.main'), root_path %>
+  </div>
+</div>

@@ -1,10 +1,10 @@
 ru:
   layouts:
     application:
-      copyright: '2019 Мозоль Виталий. Учебный проект в онлайн школе'
+      copyright: '2019 Мозоль Виталий. Учебный проект в онлайн школе " '
       tickets: 'Мои билеты'
     admin:
-      copyright: '2019 Мозоль Виталий. Учебный проект в онлайн школе '
+      copyright: '2019 Мозоль Виталий. Учебный проект в онлайн школе " '
       welcome: "Панель администратора"
   common:
     back: 'Назад'
@@ -30,7 +30,9 @@ ru:
         arrival: 'Прибытие'
         departure: 'Отправление'
         buy: 'Приобрести билет'
-
+  welcome:
+    index:
+      Search: 'ПОИСК БИЛЕТОВ'
   admin:
     railway_stations:
       new:
@@ -71,11 +73,14 @@ ru:
         departure: 'Время отправления'
     tickets:
       form:
+        number: 'Номер билета'
         submit: '%{action} билет'
         user_name: 'ФИО Пассажира'
+        passport_data: 'Паспортные данные'
         train: 'Поезд'
         first_station: 'Первая станция'
         last_station: 'Конечная станция'
+        passenger_info: 'Данные о пассажире'
       edit:
         title: 'Редактирование билета'
       index:

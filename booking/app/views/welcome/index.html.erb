@@ -1,28 +1,15 @@
 <style>
-  .head {
-    text-align: center;
-  }
 
-  .search {
-    font-size: 50px;
-    text-align: center;
-  }
 </style>
-<div class="head">
-  <h1>Hello, RAILS!</h1>
-</div>
 
 <div class="search">
-  <%= link_to 'Ticket Search', search_path %>
+  <%= link_to t('.Search'), search_path %>
 </div>
 
-<h1><%= current_user ? current_user.name : 'Guest'  %>!</h1>
+<div class="user_side"><h1><%= current_user ? current_user.name : 'Guest'  %>!</h1>
 
 <% if user_signed_in? %>
   <ul>
-    <li><%= link_to 'Tickets search', search_path %></li>
-    <li><%= link_to 'My tickets', tickets_path  %></li>
-
+    <li><%= link_to 'My tickets' , tickets_path  %></li>
   </ul>
-<% end %>
-
+  <% end %></div>

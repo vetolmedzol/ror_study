@@ -1,35 +1,45 @@
+<style>
+  .field{
+    color: black;
+  }
+  .actions{
+    color: black;
+  }
+</style>
+
+
 <%= form_with(model: @ticket, local: true) do |form| %>
   <% render 'common/errors', resource: @ticket %>
 
   <div class="field">
-    <%= form.label t('.number') %>
+    <%= form.label t('admin.tickets.form.number') %>
     <%= form.text_field :number %>
   </div>
 
   <div class="field">
-    <%= form.label 'Please, input full name of passenger!' %>
+    <%= form.label t('admin.tickets.form.user_name') %>
     <%= form.text_field :user_name %>
   </div>
 
   <div class="field">
-    <%= form.label 'Please, input passport data of passenger!' %>
+    <%= form.label t('admin.tickets.form.passport_data') %>
     <%= form.text_field :passport_data %>
   </div>
 
   <div class="field">
-    <%= form.label :current_train, 'Train' %>
+    <%= form.label t('admin.tickets.form.train') %>
     <%= form.collection_select :current_train_id,
                                Train.all, :id, :number %>
   </div>
 
   <div class="field">
-    <%= form.label :first_railway_station %>
+    <%= form.label t('admin.tickets.form.first_station') %>
     <%= form.collection_select :first_railway_station_id,
                                RailwayStation.all, :id, :title %>
   </div>
 
   <div class="field">
-    <%= form.label :last_railway_station %>
+    <%= form.label t('admin.tickets.form.last_station') %>
     <%= form.collection_select :last_railway_station_id,
                                RailwayStation.all, :id, :title %>
   </div>

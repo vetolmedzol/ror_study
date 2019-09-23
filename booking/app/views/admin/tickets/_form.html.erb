@@ -8,6 +8,11 @@
   </div>
 
   <div class="field">
+    <%= form.label t('admin.tickets.form.passport_data') %>
+    <%= form.text_field :passport_data %>
+  </div>
+
+  <div class="field">
     <%= form.label t('.train')%>
     <%= form.collection_select :train_id, Train.all, :id, :number %>
   </div>
