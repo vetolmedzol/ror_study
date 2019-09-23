@@ -1,0 +1,33 @@
+
+<%= form_with(model: @ticket, local: true) do |form| %>
+  <% render 'common/errors', resource: @ticket %>
+
+  <div class="field">
+    <%= form.label t('.user_name')%><br>
+    <%= form.text_field :user_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('admin.tickets.form.passport_data') %>
+    <%= form.text_field :passport_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('.train')%>
+    <%= form.collection_select :train_id, Train.all, :id, :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('.first_station')%>
+    <%= form.collection_select :first_railway_station_id, RailwayStation.all, :id, :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('.last_station')%>
+    <%= form.collection_select :last_railway_station_id, RailwayStation.all, :id, :title %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

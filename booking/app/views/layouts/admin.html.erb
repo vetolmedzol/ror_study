@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <div id="head">
+    <h1> <%= t('layouts.admin.welcome') %></h1>
+  </div>
+
+  <style type="text/css">
+    #footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 25px;
+      font-size: 20px;
+    }
+    #head {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<p id="notice" class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<% if user_signed_in? %>
+  <%= link_to "Exit", destroy_user_session_path, method: :delete %>
+  <p>Account: <%= current_user.email %></p>
+<% else %>
+  <%= link_to "Enter", new_user_session_path %>
+<% end %>
+
+<body>
+<%= yield %>
+</body>
+
+<div id="footer">
+  <%= ('layouts.admin.copyright') %>
+  <a href=" http://www.thinknetica.com "> Thinknetica </a>"
+</div>
+
+</html>

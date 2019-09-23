@@ -13,3 +13,67 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-image: url(train.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+.user_side {
+    font-size: 150px;
+    text-align: right;
+    color: white;
+}
+
+.user_side a {
+    color: white;
+}
+
+.search {
+    font-size: 50px;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.search a {
+    color: white;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+    padding: 25px;
+    font-size: 20px;
+    color: white;
+}
+
+#footer a {
+    color: white;
+}
+
+.train_choice {
+    font-size: 25px;
+    background-color: black;
+}
+
+.train_choice a {
+    color: white;
+}
+
+.menu a {
+    color: white;
+}
+
+.new_ticket {
+    text-align: left;
+
+}
+.ticket_show{
+    text-align: left;
+}

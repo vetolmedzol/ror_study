@@ -1,0 +1,29 @@
+<%= form_for([:admin, @train]) do |form| %>
+  <% render 'common/errors', resource: @train %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.text_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_railway_station_id, 'Station' %>
+    <%= form.collection_select :current_railway_station_id,
+                               RailwayStation.all, :id, :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_route_id, 'Route' %>
+    <%= form.collection_select :route_id,
+                               Route.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_carriages %>
+    <%= form.check_box :order_carriages%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
