@@ -5,7 +5,7 @@ class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[show edit update destroy]
 
   def index
-    @tickets = Ticket.all
+    @tickets = current_user.tickets
   end
 
   def show; end

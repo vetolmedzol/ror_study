@@ -34,7 +34,7 @@
     </tr>
     <% @routes.each do |route| %>
       <% route.trains.each do |train| %>
-        <div><tr>
+        <div> <tr>
           <td><%= train.number %></td>
           <td><%= route.name %></td>
           <td><%= "#{@first_railway_station.title} - #{@first_railway_station.time(train.route, :departure)}"%></td>

@@ -19,7 +19,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: white;
+    color: black;
 }
 
 .user_side {
@@ -59,11 +59,11 @@ body {
 
 .train_choice {
     font-size: 25px;
-    background-color: black;
+    background-color: white;
 }
 
 .train_choice a {
-    color: white;
+    color: black;
 }
 
 .menu a {
@@ -76,4 +76,9 @@ body {
 }
 .ticket_show{
     text-align: left;
+    color: white;
+
+}
+.start_session{
+    color: black;
 }

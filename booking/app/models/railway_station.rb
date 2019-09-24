@@ -12,6 +12,8 @@ class RailwayStation < ApplicationRecord
     joins(:railway_stations_routes).order('railway_stations_routes.position').uniq
   }
 
+  # scope :ordered, -> { select('railway_stations.*, railway_stations_routes.position').joins(:railway_stations_routes).order("railway_stations_routes.position").uniq }
+
   scope :departure, lambda {
     joins(:railway_stations_routes).order('railway_stations_routes.departure').uniq
   }

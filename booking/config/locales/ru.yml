@@ -1,4 +1,8 @@
 ru:
+  mailers:
+    tickets_mailer:
+      subject_create: 'Вы купили билет!'
+      subject_destroy: 'Ваш билет удалён!'
   layouts:
     application:
       copyright: '2019 Мозоль Виталий. Учебный проект в онлайн школе " '
