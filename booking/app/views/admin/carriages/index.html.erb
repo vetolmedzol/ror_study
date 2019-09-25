@@ -11,12 +11,7 @@
   </thead>
 
   <tbody>
-  <%= render partial: 'carriages/carriage', collection: @carriages %>
-
-<!--  <table class="table table-condensed">-->
-    <%#= render partial: 'table_header' %>
-    <%#= render partial: @carriage, as: :carriage %>
-<!--  </table>-->
+  <%= render partial: 'carriage', collection: @carriages %>
 
   </tbody>
 </table>
@@ -24,4 +19,4 @@
 <br>
 
 <%= link_to 'New Carriage', new_admin_train_carriage_path %> |
-<%= link_to 'Back', admin_welcome_index_path%>
+<%= link_to 'Back', admin_welcome_index_path %>

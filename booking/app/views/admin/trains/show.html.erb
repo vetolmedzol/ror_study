@@ -11,7 +11,7 @@
     No station
   <% end %>
 </p>
-<%= render partial: 'carriage', collection: @train.order_carriage %>
+<%= render partial: 'carriage', collection: @train.order_carriages %>
 
 <strong>Coupe
   cars: <%= @train.count_cars(@train.carriages, 'CoupeCarriage') %></strong>

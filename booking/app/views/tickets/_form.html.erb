@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label t('admin.tickets.form.train') %>
-    <%= form.collection_select :current_train_id,
+    <%= form.collection_select :train_id,
                                Train.all, :id, :number %>
   </div>
 

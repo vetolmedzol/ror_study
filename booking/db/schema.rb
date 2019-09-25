@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_081246) do
+ActiveRecord::Schema.define(version: 2019_09_24_162424) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "carriages", force: :cascade do |t|
     t.integer "number"
@@ -19,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_09_24_081246) do
     t.integer "side_top_seats"
     t.integer "side_lower_seats"
     t.string "type"
-    t.integer "train_id"
+    t.bigint "train_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["train_id"], name: "index_carriages_on_train_id"
@@ -50,17 +53,17 @@ ActiveRecord::Schema.define(version: 2019_09_24_081246) do
 
   create_table "tickets", force: :cascade do |t|
     t.string "number"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "current_train_id"
-    t.integer "first_railway_station_id"
-    t.integer "last_railway_station_id"
-    t.string "user_name"
     t.string "passport_data"
-    t.integer "user_id"
-    t.index ["current_train_id"], name: "index_tickets_on_current_train_id"
+    t.string "user_name"
+    t.bigint "train_id"
+    t.bigint "first_railway_station_id"
+    t.bigint "last_railway_station_id"
     t.index ["first_railway_station_id"], name: "index_tickets_on_first_railway_station_id"
     t.index ["last_railway_station_id"], name: "index_tickets_on_last_railway_station_id"
+    t.index ["train_id"], name: "index_tickets_on_train_id"
     t.index ["user_id"], name: "index_tickets_on_user_id"
   end
 
@@ -68,18 +71,11 @@ ActiveRecord::Schema.define(version: 2019_09_24_081246) do
     t.string "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "railway_stations_id"
-    t.integer "current_railway_station_id"
-    t.integer "route_id"
-    t.boolean "order_carriage", default: false
+    t.bigint "current_railway_station_id"
+    t.bigint "route_id"
+    t.boolean "order_carriage", default: true
     t.index ["current_railway_station_id"], name: "index_trains_on_current_railway_station_id"
-    t.index ["railway_stations_id"], name: "index_trains_on_railway_stations_id"
     t.index ["route_id"], name: "index_trains_on_route_id"
-  end
-
-  create_table "trains_routes", force: :cascade do |t|
-    t.integer "train_id"
-    t.integer "route_id"
   end
 
   create_table "users", force: :cascade do |t|

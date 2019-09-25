@@ -5,7 +5,7 @@
   </p>
   <p>
     <strong><%= t('admin.tickets.form.train') + ':' %> </strong>
-    <%= Train.find(@ticket.current_train_id).number %>
+    <%= Train.find(@ticket.train_id).number %>
   </p>
 
   <p>
