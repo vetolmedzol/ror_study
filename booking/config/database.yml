@@ -1,6 +1,6 @@
 default: &default
   adapter: postgresql
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
   timeout: 5000
   username: "mo"
 #  password: "12345678"
@@ -9,6 +9,8 @@ default: &default
 development:
   adapter: postgresql
   <<: *default
+  pool: 5
+  timeout: 5000
   database: booking_development
   username: "mo"
 #  password: "12345678"
@@ -20,9 +22,13 @@ development:
 test:
   adapter: postgresql
   <<: *default
+  pool: 5
+  timeout: 5000
   database: booking_test
 
 production:
   adapter: postgresql
   <<: *default
+  pool: 5
+  timeout: 5000
   database: booking_production
