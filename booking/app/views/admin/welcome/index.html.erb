@@ -1,0 +1,14 @@
+<style>
+
+  .menu {
+    text-align: center;
+    font-size: 35px;
+  }
+</style>
+
+<div class='menu'>
+  <%= link_to t('.Stations'), admin_railway_stations_path %> |
+  <%= link_to t('.Trains'), admin_trains_path %> |
+  <%= link_to t('.Routes'), admin_routes_path %> |
+  <%= link_to t('.Tickets'), admin_tickets_path %>
+</div>

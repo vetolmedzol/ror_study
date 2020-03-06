@@ -1,0 +1,7 @@
+<div class="new_ticket">
+<h1>New Ticket</h1>
+
+<%= render 'form', ticket: @ticket %>
+<%= link_to  t('common.back'), search_url %> |
+<%= link_to  t('common.main'), welcome_index_path %>
+</div>

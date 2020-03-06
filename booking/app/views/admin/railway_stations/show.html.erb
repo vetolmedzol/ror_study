@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong> <%=t('.name') %> </strong>
+  <%= @railway_station.title %>
+</p>
+
+<% if @railway_station.routes.empty? %>
+  <p>The station is not included in any route</p>
+<% else %>
+  <p>The station is included in the following routes:</p>
+  <ul>
+    <% @railway_station.routes.each do |route| %>
+      <li><%= route.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= link_to t('common.edit'), edit_admin_railway_station_path(@railway_station) %> |
+<%= link_to t('common.back'), admin_railway_stations_path %> |
+ <%= link_to t('common.main'), admin_welcome_index_path %>

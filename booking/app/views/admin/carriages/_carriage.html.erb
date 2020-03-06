@@ -1,0 +1,6 @@
+<tr>
+  <td><%= carriage.number %></td>
+  <td><%= link_to 'Show',  admin_train_carriage_path(@train, carriage) %></td>
+  <td><%= link_to 'Edit', edit_admin_train_carriage_path(@train, carriage) %></td>
+  <td><%= link_to 'Destroy', admin_train_carriage_path(@train,carriage), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

@@ -1,0 +1,25 @@
+<h2>Ticket info:</h2>
+
+<p>
+  <strong>t.('number')</strong>
+  <%= @ticket.id %>
+</p>
+<p>
+  <strong>t.('.train')</strong>
+  <%#= Train.find(@ticket.train_id).number %>
+  <%= "#{@ticket.train.present? ? @ticket.train.number : 'blank'}" %>
+</p>
+<p>
+  <strong>Departure station:</strong>
+  <%= RailwayStation.find(@ticket.first_railway_station).title %>
+</p>
+<p>
+  <strong>Arrival station:</strong>
+  <%= RailwayStation.find(@ticket.last_railway_station).title %>
+</p>
+
+<p> Name: <%= @ticket.user_name %> </p>
+<p> Passport: <%= @ticket.passport_data%> </p>
+
+<%= link_to 'Edit', edit_admin_ticket_path(@ticket) %> |
+<%= link_to 'Back', admin_tickets_path %>

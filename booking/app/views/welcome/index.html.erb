@@ -1,0 +1,15 @@
+<style>
+
+</style>
+
+<div class="search">
+  <%= link_to t('.Search'), search_path %>
+</div>
+
+<div class="user_side"><h1><%= current_user ? current_user.name : 'Guest'  %>!</h1>
+
+<% if user_signed_in? %>
+  <ul>
+    <li><%= link_to 'My tickets' , tickets_path  %></li>
+  </ul>
+  <% end %></div>
