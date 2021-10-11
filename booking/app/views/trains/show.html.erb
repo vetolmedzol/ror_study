@@ -1,8 +1,23 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Number:</strong>
   <%= @train.number %>
+</p>
+<p>
+  <strong>Railway Station:</strong>
+  <% if @train.current_station %>
+    <%= @train.current_station.title %>
+  <% else %>
+    No station
+  <% end %>
+</p>
+<p>
+  <strong>Route:</strong>
+  <% if @train.route %>
+    <%= @train.route.name %>
+  <% else %>
+    No route
+  <% end %>
 </p>
 
 <button> <%= link_to 'Edit', edit_train_path(@train) %></button> |

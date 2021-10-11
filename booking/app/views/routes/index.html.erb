@@ -11,14 +11,7 @@
   </thead>
 
   <tbody>
-  <% @routes.each do |route| %>
-    <tr>
-      <td><%= route.name %></td>
-      <td><button><%= link_to 'Show', route %></button></td>
-      <td><button><%= link_to 'Edit', edit_route_path(route) %></button></td>
-      <td><button><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
-    </tr>
-  <% end %>
+  <%= render @routes %>
   </tbody>
 </table>
 
